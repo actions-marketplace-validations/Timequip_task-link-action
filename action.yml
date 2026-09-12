@@ -1,0 +1,22 @@
+name: Timequip task link
+description: Validate Timequip task keys in pull requests and publish a non-blocking summary.
+author: Timequip
+branding:
+  icon: check-circle
+  color: blue
+inputs:
+  timequip-url:
+    description: Timequip API origin
+    required: false
+    default: https://timequip.com
+  project-key:
+    description: Optional Timequip project key to validate
+    required: false
+outputs:
+  task-keys:
+    description: Detected Timequip task keys
+  linked-count:
+    description: Number of detected task keys
+runs:
+  using: node20
+  main: dist/index.js
